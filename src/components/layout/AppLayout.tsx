@@ -420,10 +420,13 @@ export const AppLayout: React.FC = () => {
 
       {/* USER PROFILE MODAL / POPUP */}
       {showUserMenu && (
-        <div className="fixed inset-0 z-50 bg-black/30 backdrop-blur-2xs flex items-end sm:items-start justify-start p-4 sm:pt-16 sm:pl-16">
+        <div
+          onClick={() => setShowUserMenu(false)}
+          className="fixed inset-0 z-50 bg-black/20 backdrop-blur-2xs"
+        >
           <div
             onClick={(e) => e.stopPropagation()}
-            className="bg-white dark:bg-[#121214] rounded-xl shadow-2xl border border-slate-200 dark:border-zinc-800 w-64 p-3 text-xs space-y-2 animate-in fade-in"
+            className="fixed bottom-3 left-15 sm:left-16 bg-white dark:bg-[#121214] rounded-xl shadow-2xl border border-slate-200 dark:border-zinc-800 w-64 p-3 text-xs space-y-2 animate-in fade-in"
           >
             <div className="pb-2 border-b border-slate-100 dark:border-zinc-800">
               <div className="font-bold text-slate-900 dark:text-white">{user?.fullName || 'User'}</div>
